@@ -1,3 +1,3 @@
 # HPC Systems Monitoring
 
-Custom scripts for monitoring HPC Systems using CheckMK
+Custom scripts for monitoring HPC systems using CheckMK
