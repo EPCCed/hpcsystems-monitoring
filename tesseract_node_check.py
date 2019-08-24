@@ -6,6 +6,11 @@
 # Script to take "cpower" status for all nodes and format appropriately for     
 # monitoring
 #
+# Checkmk local check format: https://checkmk.com/cms_localchecks.html
+#
+# Note that although this outputs in "local" format the script should go in the
+# "plugins" folder as for each node it explicitly includes the "<<<local>>>"
+# line in its output
 #
 # Authors:  Philip Cass                                                    
 #           HPC Systems team, EPCC, University of Edinburgh                               
@@ -22,10 +27,10 @@
 import subprocess
 import sys
 
-# Access list of nodes presented by HPE management system
+# Get list of nodes presented by HPE management system and strip the suffix
 nodes=[x[:-5] for x in  open("/etc/dsh/group/ice-compute").readlines()]
 
-# Create a subprocess running the HPE providede "cpower" command
+# Create a subprocess running the HPE provided "cpower" command
 command = ["/opt/sgi/sbin/cpower","node","status","r*i*n*"]
 p = subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
 output,stderror = p.communicate()
@@ -51,7 +56,7 @@ for line in output.split("\n"):
             print "3 node_power - cpower command on the SAC reports node as unknown state {0}".format(state)
         print "<<<<>>>>"
 
-# Output relevant information for nodes not found in cpower check
+# For nodes not found in cpower check, output "UNKNONN" status
 for node in nodes:
     node="ts-" + node
     print "<<<<{0}>>>>".format(node)
