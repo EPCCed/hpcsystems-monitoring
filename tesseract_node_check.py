@@ -6,7 +6,7 @@
 # Script to take "cpower" status for all nodes and format appropriately for     
 # monitoring
 #
-# Checkmk local check format: https://checkmk.com/cms_localchecks.html
+# CheckMK local check format: https://checkmk.com/cms_localchecks.html
 #
 # Note that although this outputs in "local" format the script should go in the
 # "plugins" folder as for each node it explicitly includes the "<<<local>>>"
@@ -20,8 +20,6 @@
 # MIT License                                                                   
 #                                                                               
 ###############################################################################
-
-
 
 
 import subprocess
