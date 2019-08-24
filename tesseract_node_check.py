@@ -7,7 +7,7 @@
 # monitoring
 #
 #
-# Authors:  Philip Cass, Kieran Leach                                                     
+# Authors:  Philip Cass                                                    
 #           HPC Systems team, EPCC, University of Edinburgh                               
 #                                                                               
 #           2019-08-01                                                                    
