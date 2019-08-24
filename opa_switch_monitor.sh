@@ -7,7 +7,7 @@
 # Where links disappear CheckMK will alert.
 #
 #
-# Authors:  Philip Cass, Kieran Leach
+# Authors:  Kieran Leach
 #           HPC Systems team, EPCC, University of Edinburgh
 #
 #           2019-08-01
