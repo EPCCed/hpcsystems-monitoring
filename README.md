@@ -9,7 +9,7 @@ Both scripts are designed to integrate with the CheckMK monitoring system. In ad
 A Python2 script that wraps for the HPE "cpower" command to provide basic status information on each compute in a HPE system. It does this by processing output from the "cpower" command and passes the data in an appropriate format to the Panopticon CheckMK server at EPCC. This script is run on the central management node provided with the [Tesseract](https://dirac.ac.uk/resources/) HPE SGI 8600 system.
 
 ### opa_switch_monitor.sh
-a BASH script developed to monitor the Omnipath network on the Tesseract HPE SGI 8600 system. It uses the "opareoprt" command in order to generate monitoring information for each switch within the Tesseract Omniparth network. 
+a BASH script developed to monitor the Omni-Path network on the Tesseract HPE SGI 8600 system. It uses the "opareoprt" command in order to generate monitoring information for each switch within the Tesseract Omniparth network. 
 
 A useful outline of developing custom checks in the manner used at EPCC can be found in the CheckMK guide [here](https://checkmk.com/cms_localchecks.html).
 
@@ -30,9 +30,9 @@ A sample of the node listing maintained by the HPE software stack for dsh (/etc/
 
 Sample output from this script when run manually can be found in file: tesseract_node_check_sample_output. Note this is the output for the same 12 nodes listed in the sample input.
 
-This **opa_switch_monitor.sh** script is run on the "rack leader" for rack 1 of the system - this rack leader also acts as one of two fabric managers for the Omnipath network. This script could however be run from any node from which the "opareport" command can interrogate the network. 
+This **opa_switch_monitor.sh** script is run on the "rack leader" for rack 1 of the system - this rack leader also acts as one of two fabric managers for the Omni-Path network. This script could however be run from any node from which the "opareport" command can interrogate the network. 
 
-This script outputs to the /var/lib/check\_mk\_agent/spool directory - this location may vary depending on the OS and version of CheckMK involved. This script should be simply reproducible on any system with an Omnipath network and CheckMK. A cron or other automatic mechanism should be used to run the script at an appropriate interval. A sample of the switch list used to identify which switches should be monitored can be found in file: opa_switch_monitor_switch.list. Sample output from this script can be found in file: opa_switch_monitor_output
+This script outputs to the /var/lib/check\_mk\_agent/spool directory - this location may vary depending on the OS and version of CheckMK involved. This script should be simply reproducible on any system with an Omni-Path network and CheckMK. A cron or other automatic mechanism should be used to run the script at an appropriate interval. A sample of the switch list used to identify which switches should be monitored can be found in file: opa_switch_monitor_switch.list. Sample output from this script can be found in file: opa_switch_monitor_output
 
 
 
